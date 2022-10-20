@@ -10,7 +10,7 @@ public class SwitchController : MonoBehaviour
     private Camera mainCamera;
     private float cameraZDistance;
     public bool isSwitchedOn = false;
-    public UnityEvent  switchedOn;
+    public UnityEvent switchedOn;
 
 
 
@@ -25,35 +25,30 @@ public class SwitchController : MonoBehaviour
     {
         Vector3 ScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 NewWorldPosition = mainCamera.ScreenToWorldPoint(ScreenPosition);
-        // Debug.Log(" newPosition is " + NewWorldPosition.y);
-        // if (NewWorldPosition.y > 0)
-        // {
-        //     // turnOn();
-        // }
+
     }
 
     void OnMouseDown()
     {
         Vector3 ScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
-        Debug.Log("screen position is " + ScreenPosition);
+
     }
     void OnMouseUp()
     {
         Vector3 ScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
 
         Vector3 NewWorldPosition = mainCamera.ScreenToWorldPoint(ScreenPosition);
-        Debug.Log("new World Position is: " + handle.transform.rotation.z );
-        if (NewWorldPosition.y >2.5 ) //&& handle.transform.rotation.z < -50)
+
+        if (NewWorldPosition.y > 2.5)
         {
             if (!isSwitchedOn)
             {
                 turnOn();
                 switchedOn.Invoke();
             }
-            
+
         }
-        // else Debug.Log("false");
-        Debug.Log("New Worls position is " + NewWorldPosition.y);
+
     }
 
     public void turnOn()
@@ -62,7 +57,7 @@ public class SwitchController : MonoBehaviour
             handle.transform.eulerAngles.x,
             handle.transform.eulerAngles.y,
             handle.transform.eulerAngles.z + 75
-            
+
         );
         isSwitchedOn = true;
         StartCoroutine(AutoSwitchOff());
@@ -73,7 +68,7 @@ public class SwitchController : MonoBehaviour
             handle.transform.eulerAngles.x,
             handle.transform.eulerAngles.y,
             handle.transform.eulerAngles.z - 75
-            
+
         );
         isSwitchedOn = false;
     }

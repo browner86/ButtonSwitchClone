@@ -9,11 +9,7 @@ public class Counter : MonoBehaviour
     public int onSwitches = 0;
     public int totalInteractions = 0;
     public UnityEvent reachTenInteractions;
-    
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -32,11 +28,11 @@ public class Counter : MonoBehaviour
     }
 
     public void checkMaxInteractions()
-    {   
-    if (totalInteractions >= 10)
     {
-        reachTenInteractions.Invoke();
-    }
+        if (totalInteractions >= 10)
+        {
+            reachTenInteractions.Invoke();
+        }
 
     }
 }

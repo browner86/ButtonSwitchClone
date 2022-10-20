@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartManager : MonoBehaviour
 {
-    
+
     public bool isPaused;
     public GameObject dialogCanvas;
 
@@ -18,11 +18,11 @@ public class RestartManager : MonoBehaviour
         dialogCanvas.SetActive(true);
         PauseGame();
     }
-   
+
     public void RestartScene()
     {
         // ResumeGame(); 
-       
+
         SceneManager.LoadScene("SampleScene");
     }
 
@@ -33,11 +33,11 @@ public class RestartManager : MonoBehaviour
 
     public void PauseGame()
     {
-         isPaused = true;
-         Time.timeScale = 0;
+        isPaused = true;
+        Time.timeScale = 0;
     }
     public void ResumeGame()
     {
-         Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 }
