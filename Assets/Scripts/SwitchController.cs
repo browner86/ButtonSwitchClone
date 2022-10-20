@@ -42,8 +42,8 @@ public class SwitchController : MonoBehaviour
         Vector3 ScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
 
         Vector3 NewWorldPosition = mainCamera.ScreenToWorldPoint(ScreenPosition);
-        Debug.Log("rotation y is: " + handle.transform.rotation.z );
-        if (NewWorldPosition.y >0 ) //&& handle.transform.rotation.z < -50)
+        Debug.Log("new World Position is: " + handle.transform.rotation.z );
+        if (NewWorldPosition.y >2.5 ) //&& handle.transform.rotation.z < -50)
         {
             if (!isSwitchedOn)
             {
