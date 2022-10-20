@@ -80,7 +80,7 @@ public class SwitchController : MonoBehaviour
 
     IEnumerator AutoSwitchOff()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         turnOff();
     }
 
