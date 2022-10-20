@@ -9,10 +9,6 @@ public class UpdateCountUI : MonoBehaviour
     public TMP_Text switchCounterUI;
     public GameObject counter;
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
