@@ -65,16 +65,23 @@ public class SwitchController : MonoBehaviour
             
         );
         isSwitchedOn = true;
+        StartCoroutine(AutoSwitchOff());
     }
     public void turnOff()
     {
         handle.transform.eulerAngles = new Vector3(
             handle.transform.eulerAngles.x,
             handle.transform.eulerAngles.y,
-            handle.transform.eulerAngles.z + 75
+            handle.transform.eulerAngles.z - 75
             
         );
         isSwitchedOn = false;
+    }
+
+    IEnumerator AutoSwitchOff()
+    {
+        yield return new WaitForSeconds(2);
+        turnOff();
     }
 
 }
